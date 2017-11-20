@@ -1,0 +1,707 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Proxy Cart Documentation</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;javascript&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="javascript">javascript</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#what-is-proxy-cart" class="toc-h2 toc-link" data-title="What is Proxy Cart?">What is Proxy Cart?</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#dependencies" class="toc-h1 toc-link" data-title="Dependencies">Dependencies</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#proxy-engine" class="toc-h2 toc-link" data-title="Proxy Engine">Proxy Engine</a>
+                  </li>
+                  <li>
+                    <a href="#proxy-permissions" class="toc-h2 toc-link" data-title="Proxy Permissions">Proxy Permissions</a>
+                  </li>
+                  <li>
+                    <a href="#proxy-passport" class="toc-h2 toc-link" data-title="Proxy Passport">Proxy Passport</a>
+                  </li>
+                  <li>
+                    <a href="#proxy-notifications" class="toc-h2 toc-link" data-title="Proxy Notifications">Proxy Notifications</a>
+                  </li>
+                  <li>
+                    <a href="#supported-orms" class="toc-h2 toc-link" data-title="Supported ORMs">Supported ORMs</a>
+                  </li>
+                  <li>
+                    <a href="#supported-webserver" class="toc-h2 toc-link" data-title="Supported Webserver">Supported Webserver</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#installation" class="toc-h1 toc-link" data-title="Installation">Installation</a>
+          </li>
+          <li>
+            <a href="#configuration" class="toc-h1 toc-link" data-title="Configuration">Configuration</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#config-main-js" class="toc-h2 toc-link" data-title="config/main.js">config/main.js</a>
+                  </li>
+                  <li>
+                    <a href="#config-web-js" class="toc-h2 toc-link" data-title="config/web.js">config/web.js</a>
+                  </li>
+                  <li>
+                    <a href="#config-proxycart-js" class="toc-h2 toc-link" data-title="config/proxyCart.js">config/proxyCart.js</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#definitions" class="toc-h1 toc-link" data-title="Definitions">Definitions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#shops" class="toc-h2 toc-link" data-title="Shops">Shops</a>
+                  </li>
+                  <li>
+                    <a href="#products" class="toc-h2 toc-link" data-title="Products">Products</a>
+                  </li>
+                  <li>
+                    <a href="#product-variants" class="toc-h2 toc-link" data-title="Product Variants">Product Variants</a>
+                  </li>
+                  <li>
+                    <a href="#product-association" class="toc-h2 toc-link" data-title="Product Association">Product Association</a>
+                  </li>
+                  <li>
+                    <a href="#product-images" class="toc-h2 toc-link" data-title="Product Images">Product Images</a>
+                  </li>
+                  <li>
+                    <a href="#product-reviews" class="toc-h2 toc-link" data-title="Product Reviews">Product Reviews</a>
+                  </li>
+                  <li>
+                    <a href="#metadata" class="toc-h2 toc-link" data-title="Metadata">Metadata</a>
+                  </li>
+                  <li>
+                    <a href="#collections" class="toc-h2 toc-link" data-title="Collections">Collections</a>
+                  </li>
+                  <li>
+                    <a href="#tags" class="toc-h2 toc-link" data-title="Tags">Tags</a>
+                  </li>
+                  <li>
+                    <a href="#customers" class="toc-h2 toc-link" data-title="Customers">Customers</a>
+                  </li>
+                  <li>
+                    <a href="#users" class="toc-h2 toc-link" data-title="Users">Users</a>
+                  </li>
+                  <li>
+                    <a href="#accounts" class="toc-h2 toc-link" data-title="Accounts">Accounts</a>
+                  </li>
+                  <li>
+                    <a href="#sources" class="toc-h2 toc-link" data-title="Sources">Sources</a>
+                  </li>
+                  <li>
+                    <a href="#carts" class="toc-h2 toc-link" data-title="Carts">Carts</a>
+                  </li>
+                  <li>
+                    <a href="#orders" class="toc-h2 toc-link" data-title="Orders">Orders</a>
+                  </li>
+                  <li>
+                    <a href="#fulfillment" class="toc-h2 toc-link" data-title="Fulfillment">Fulfillment</a>
+                  </li>
+                  <li>
+                    <a href="#fulfillment-event" class="toc-h2 toc-link" data-title="Fulfillment Event">Fulfillment Event</a>
+                  </li>
+                  <li>
+                    <a href="#transactions" class="toc-h2 toc-link" data-title="Transactions">Transactions</a>
+                  </li>
+                  <li>
+                    <a href="#refunds" class="toc-h2 toc-link" data-title="Refunds">Refunds</a>
+                  </li>
+                  <li>
+                    <a href="#gift-cards" class="toc-h2 toc-link" data-title="Gift Cards">Gift Cards</a>
+                  </li>
+                  <li>
+                    <a href="#discounts" class="toc-h2 toc-link" data-title="Discounts">Discounts</a>
+                  </li>
+                  <li>
+                    <a href="#coupon" class="toc-h2 toc-link" data-title="Coupon">Coupon</a>
+                  </li>
+                  <li>
+                    <a href="#subscriptions" class="toc-h2 toc-link" data-title="Subscriptions">Subscriptions</a>
+                  </li>
+                  <li>
+                    <a href="#shipping-zones" class="toc-h2 toc-link" data-title="Shipping Zones">Shipping Zones</a>
+                  </li>
+                  <li>
+                    <a href="#shipping-restrictions" class="toc-h2 toc-link" data-title="Shipping Restrictions">Shipping Restrictions</a>
+                  </li>
+                  <li>
+                    <a href="#vendors" class="toc-h2 toc-link" data-title="Vendors">Vendors</a>
+                  </li>
+                  <li>
+                    <a href="#events" class="toc-h2 toc-link" data-title="Events">Events</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+      </div>
+        <ul class="toc-footer">
+            <li><a href='https://github.com/CaliStyle/trailpack-proxy-engine'>Proxy Engine</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to the Proxy Cart for Proxy Engine Docs! <a href="https://github.com/CaliStyle/trailpack-proxy-engine">Proxy Engine</a> is an Open Source Node.js Framework created by the team at <a href="https://cali-style.com">Cali Style Technologies</a>.</p>
+<h2 id='what-is-proxy-cart'>What is Proxy Cart?</h2>
+<p>Proxy Cart is the eCommerce component for <a href="https://github.com/calistyle/trailpack-proxy-engine">Proxy Engine</a>. Connect your own <a href="https://github.com/calistyle/trailpack-proxy-generics">Merchant Processor, Shipping Provider, Fulfillment Service, Tax Provider</a>, and import your products. Attach it to Proxy Engine and you have an REST API based eCommerce solution!</p>
+<h1 id='dependencies'>Dependencies</h1><h2 id='proxy-engine'>Proxy Engine</h2>
+<table><thead>
+<tr>
+<th>Repo</th>
+<th>Build Status (edge)</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><a href="https://github.com/calistyle/trailpack-proxy-engine">trailpack-proxy-engine</a></td>
+<td><a href="https://circleci.com/gh/CaliStyle/trailpack-proxy-engine/tree/master"><img src="https://img.shields.io/circleci/project/github/CaliStyle/trailpack-proxy-engine/nmaster.svg" alt="Build status" /></a></td>
+</tr>
+</tbody></table>
+<h2 id='proxy-permissions'>Proxy Permissions</h2>
+<table><thead>
+<tr>
+<th>Repo</th>
+<th>Build Status (edge)</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><a href="https://github.com/calistyle/trailpack-proxy-permissions">trailpack-proxy-permissions</a></td>
+<td><a href="https://circleci.com/gh/CaliStyle/trailpack-proxy-permissions/tree/master"><img src="https://img.shields.io/circleci/project/github/CaliStyle/trailpack-proxy-permissions/nmaster.svg" alt="Build status" /></a></td>
+</tr>
+</tbody></table>
+<h2 id='proxy-passport'>Proxy Passport</h2>
+<table><thead>
+<tr>
+<th>Repo</th>
+<th>Build Status (edge)</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><a href="https://github.com/calistyle/trailpack-proxy-passport">trailpack-proxy-passport</a></td>
+<td><a href="https://circleci.com/gh/CaliStyle/trailpack-proxy-passport/tree/master"><img src="https://img.shields.io/circleci/project/github/CaliStyle/trailpack-proxy-passport/nmaster.svg" alt="Build status" /></a></td>
+</tr>
+</tbody></table>
+<h2 id='proxy-notifications'>Proxy Notifications</h2>
+<table><thead>
+<tr>
+<th>Repo</th>
+<th>Build Status (edge)</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><a href="https://github.com/calistyle/trailpack-proxy-notifications">trailpack-proxy-notifications</a></td>
+<td><a href="https://circleci.com/gh/CaliStyle/trailpack-proxy-notifications/tree/master"><img src="https://img.shields.io/circleci/project/github/CaliStyle/trailpack-proxy-notifications/nmaster.svg" alt="Build status" /></a></td>
+</tr>
+</tbody></table>
+<h2 id='supported-orms'>Supported ORMs</h2>
+<table><thead>
+<tr>
+<th>Repo</th>
+<th>Build Status (edge)</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><a href="https://github.com/calistyle/trailpack-proxy-sequelize">trailpack-proxy-sequelize</a></td>
+<td><a href="https://travis-ci.org/trailsjs/trailpack-sequelize"><img src="https://img.shields.io/travis/trailsjs/trailpack-sequelize/master.svg?style=flat-square" alt="Build status" /></a></td>
+</tr>
+</tbody></table>
+<h2 id='supported-webserver'>Supported Webserver</h2>
+<table><thead>
+<tr>
+<th>Repo</th>
+<th>Build Status (edge)</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><a href="https://github.com/trailsjs/trailpack-express">trailpack-express</a></td>
+<td><a href="https://travis-ci.org/trailsjs/trailpack-express"><img src="https://img.shields.io/travis/trailsjs/trailpack-express/master.svg?style=flat-square" alt="Build status" /></a></td>
+</tr>
+</tbody></table>
+<h1 id='installation'>Installation</h1>
+<p>To install Proxy Generics:</p>
+
+<p><code>
+$ npm install trailpack-proxy-generics
+</code></p>
+
+<p>If you are using Trail&#39;s yo generator:</p>
+
+<p><code>
+$ yo trails:trailpack trailpack-proxy-generics
+</code></p>
+<h1 id='configuration'>Configuration</h1>
+<p>To configure Proxy Cart is simple, there are only 3 files to create/modify:</p>
+<h2 id='config-main-js'>config/main.js</h2>
+<blockquote>
+<p>config/main.js</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">packs</span><span class="p">:</span> <span class="p">[</span>
+    <span class="c1">// ... other trailpacks</span>
+    <span class="nx">require</span><span class="p">(</span><span class="s1">'trailpack-proxy-cart'</span><span class="p">)</span>
+    <span class="c1">// ... other proxy-packs</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre>
+<p>Like all Trails&#39; trailpacks, it must be included in the <code>config/main.js</code> file.</p>
+<h2 id='config-web-js'>config/web.js</h2>
+<blockquote>
+<p>config/web.js
+```javascript
+module.exports = {
+  /**
+   * Middlewares to load (in order)
+   * Add the Proxy Cart middleware after the passport middleware
+   */
+  middlewares: {</p>
+</blockquote>
+
+<p>//middlewares loading order
+    order: [
+      // ... other middleware
+      &#39;session&#39;,
+      &#39;passportInit&#39;, // &lt;-- Handles Passport
+      &#39;passportSession&#39;, // &lt;-- Handles Passport Session
+      &#39;proxyCartInit&#39;, // &lt;-- Handles Cart Middleware start
+      &#39;proxyCartSession&#39;, // &lt;-- Handles Session
+      &#39;proxyCartSessionCart&#39;, // &lt;-- Handles Cart Session
+      &#39;proxyCartSessionCustomer&#39;, // &lt;-- Handles Customer Session
+      // ... trailing middleware
+    ]
+  }
+}
+```</p>
+<h2 id='config-proxycart-js'>config/proxyCart.js</h2>
+<blockquote>
+<p>config/proxyCart.js</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="c1">// The default Shop address (Nexus)</span>
+    <span class="na">nexus</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">name</span><span class="p">:</span> <span class="s1">'&lt;name&gt;'</span><span class="p">,</span>
+      <span class="na">host</span><span class="p">:</span> <span class="s1">'&lt;host&gt;'</span><span class="p">,</span>
+      <span class="na">email</span><span class="p">:</span> <span class="s1">'&lt;email&gt;'</span><span class="p">,</span>
+      <span class="na">address</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">address_1</span><span class="p">:</span> <span class="s1">'&lt;address 1&gt;'</span><span class="p">,</span>
+        <span class="na">address_2</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span>
+        <span class="na">address_3</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span>
+        <span class="na">company</span><span class="p">:</span> <span class="s1">'&lt;company&gt;'</span><span class="p">,</span>
+        <span class="na">city</span><span class="p">:</span> <span class="s1">'&lt;city&gt;'</span><span class="p">,</span>
+        <span class="na">province</span><span class="p">:</span> <span class="s1">'&lt;full name of state/province&gt;'</span><span class="p">,</span>
+        <span class="na">country</span><span class="p">:</span> <span class="s1">'&lt;full name of country&gt;'</span><span class="p">,</span>
+        <span class="na">postal_code</span><span class="p">:</span> <span class="s1">'&lt;postal code&gt;'</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="c1">// Allow certain events</span>
+    <span class="na">allow</span><span class="p">:</span> <span class="p">{</span>
+      <span class="c1">// Allows a product to be destroyed, Recommended false</span>
+      <span class="na">destroy_product</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="c1">// Allows a product variant to be destroyed, Recommended false</span>
+      <span class="na">destroy_variant</span><span class="p">:</span> <span class="kc">false</span>
+    <span class="p">},</span>
+    <span class="c1">// The default currency used</span>
+    <span class="na">default_currency</span><span class="p">:</span> <span class="s1">'USD'</span><span class="p">,</span>
+    <span class="c1">// The countries to load by default</span>
+    <span class="na">default_countries</span><span class="p">:</span> <span class="p">[</span><span class="s1">'USA'</span><span class="p">],</span>
+    <span class="c1">// Emails to send</span>
+    <span class="na">emails</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">orderCreated</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="na">orderUpdated</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="na">orderPaid</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="na">orderFulfilled</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="na">orderRefunded</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="na">orderCancelled</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="na">sourceExpired</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="na">sourceWillExpire</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="na">sourceUpdated</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="na">subscriptionCreated</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="na">subscriptionUpdated</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="na">subscriptionActivated</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="na">subscriptionDeactivated</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="na">subscriptionCancelled</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="na">subscriptionWillRenew</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="na">subscriptionRenewed</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="na">transactionFailed</span><span class="p">:</span> <span class="kc">false</span>
+    <span class="p">},</span>
+    <span class="c1">// Orders</span>
+    <span class="na">orders</span><span class="p">:</span> <span class="p">{</span>
+      <span class="c1">// Restock default for refunded order items</span>
+      <span class="na">refund_restock</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="c1">// The default function for an automatic order payment: manual, immediate</span>
+      <span class="na">payment_kind</span><span class="p">:</span> <span class="s1">'immediate'</span><span class="p">,</span>
+      <span class="c1">// the default function for transaction kind: authorize, sale</span>
+      <span class="na">transaction_kind</span><span class="p">:</span> <span class="s1">'authorize'</span><span class="p">,</span>
+      <span class="c1">// The default function for an automatic order fulfillment: manual, immediate</span>
+      <span class="na">fulfillment_kind</span><span class="p">:</span> <span class="s1">'manual'</span><span class="p">,</span>
+      <span class="c1">// The amount of times a Order will retry failed transactions</span>
+      <span class="na">retry_attempts</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="c1">// The amount of days before a Order will cancel from failed transactions</span>
+      <span class="na">grace_period_days</span><span class="p">:</span> <span class="mi">5</span>
+    <span class="p">},</span>
+    <span class="c1">// Subscriptions</span>
+    <span class="na">subscriptions</span><span class="p">:</span> <span class="p">{</span>
+      <span class="c1">// The amount of times a Subscription will retry failed transactions</span>
+      <span class="na">retry_attempts</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="c1">// The amount of days before a Subscription will cancel from failed transactions</span>
+      <span class="na">grace_period_days</span><span class="p">:</span> <span class="mi">5</span>
+    <span class="p">},</span>
+    <span class="c1">// Transactions</span>
+    <span class="na">transactions</span><span class="p">:</span> <span class="p">{</span>
+      <span class="c1">// The amount of times a Transaction will retry failed</span>
+      <span class="na">retry_attempts</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="c1">// The amount of days before a Transaction will cancel from failed</span>
+      <span class="na">authorization_exp_days</span><span class="p">:</span> <span class="mi">5</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>Also, Proxy Cart takes it&#39;s own config in the <code>config/proxyCart.js</code> file.</p>
+<h3 id='config-parameters'>Config Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+<h1 id='definitions'>Definitions</h1><h2 id='shops'>Shops</h2>
+<p>A shop represents a physical location that sells a product. When taxes and shipping are calculated per product, they are calculated by the nearest shop to the destination of an order. This means that the same product can be sold in multiple stores and shipped from different locations which may effect shipping and tax rates. They also track on hand inventory and inventory lead time.</p>
+<h2 id='products'>Products</h2>
+<p>A Product is a Physical or Digital item.</p>
+<h2 id='product-variants'>Product Variants</h2>
+<p>A Product Variant is a variation of a product denoted by a unique Stock Keeping Unit (SKU)</p>
+<h2 id='product-association'>Product Association</h2>
+<p>A Product Association is a product that is associated to another product beyond the levels of a collection or tag.</p>
+<h2 id='product-images'>Product Images</h2>
+<p>A Product Image is an image that is associated directly with a product and sometimes a product variant.</p>
+<h2 id='product-reviews'>Product Reviews</h2>
+<p>A Product Review is input from a customer with a history of purchasing a product.</p>
+<h2 id='metadata'>Metadata</h2>
+<p>A Metadata is additional information about a product, customer, or review that is not constrained by the parent model.</p>
+<h2 id='collections'>Collections</h2>
+<p>A Collection is a grouping of like items, such as products, customers, and shipping zones and can apply collection discounts, shipping overrides, and tax overrides.</p>
+<h2 id='tags'>Tags</h2>
+<p>A Tag is a searching marker for a customer, product, or order.</p>
+<h2 id='customers'>Customers</h2>
+<p>A Customer represents an account of one more users or guests.</p>
+<h2 id='users'>Users</h2>
+<p>A User is a registered user account with an username/email and password with given permission roles. Multiple users can share a single Customer account.</p>
+<h2 id='accounts'>Accounts</h2>
+<p>An Account is a 3rd party payment provider that the customer belongs to such as Stripe or Authorize.net, each customer can have multiple accounts</p>
+<h2 id='sources'>Sources</h2>
+<p>A Source is a payment method used by the customer at checkout that belongs to a customer and a 3rd party Account.</p>
+<h2 id='carts'>Carts</h2>
+<p>A Cart is a bucket that holds products and data until an order is placed.</p>
+<h2 id='orders'>Orders</h2>
+<p>An Order is a bucket that holds products and data and the transactions of purchases and fulfillment.</p>
+<h2 id='fulfillment'>Fulfillment</h2>
+<p>A Fulfillment is a shipping transaction for an order.</p>
+<h2 id='fulfillment-event'>Fulfillment Event</h2>
+<p>A Fulfillment Event is the progress of a Fulfillment.</p>
+<h2 id='transactions'>Transactions</h2>
+<p>A Transaction is a representation of a purchasing event.</p>
+<h2 id='refunds'>Refunds</h2>
+<p>A Refund represents a transaction that has been completely or partially refunded.</p>
+<h2 id='gift-cards'>Gift Cards</h2>
+<p>A Gift Card is an alternate payment method that acts as a customer source.</p>
+<h2 id='discounts'>Discounts</h2>
+<p>A Discount is a value or percent off of a product, shipping cost, or total order applied by meeting criteria.</p>
+<h2 id='coupon'>Coupon</h2>
+<p>A redeemable discount that has a code.</p>
+<h2 id='subscriptions'>Subscriptions</h2>
+<p>A Subscription is the reoccurring of an order based on time period.</p>
+<h2 id='shipping-zones'>Shipping Zones</h2>
+<p>A Shipping Zone is a geographical area that may override shipping and tax costs.</p>
+<h2 id='shipping-restrictions'>Shipping Restrictions</h2>
+<p>A Shipping Restriction is a geographical restriction on the shipping of certain products.</p>
+<h2 id='vendors'>Vendors</h2>
+<p>Vendors are companies that distribute a product. In the case of drop shipping, the taxes and shipping are calculated from the vendor address to the customer.</p>
+<h2 id='events'>Events</h2>
+<p>Proxy Cart publishes many subscribable events using Proxy Engine&#39;s pub/sub.</p>
+<h1 id='errors'>Errors</h1>
+<p>The Proxy Engine API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request -- Your request sucks.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized -- Your API key is wrong.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden -- The requested is hidden for administrators only.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found -- The specified could not be found.</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
+</tr>
+<tr>
+<td>410</td>
+<td>Gone -- The requested has been removed from our servers.</td>
+</tr>
+<tr>
+<td>418</td>
+<td>I&#39;m a teapot.</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests -- You&#39;re requesting too often! Slow down!</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="javascript">javascript</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
