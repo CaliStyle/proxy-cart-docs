@@ -6,6 +6,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
 
 toc_footers:
   - <a href='https://github.com/CaliStyle/trailpack-proxy-engine'>Proxy Engine</a>
+  - <a href='https://github.com/CaliStyle/trailpack-proxy-cart'>Proxy Cart</a>
 
 includes:
   - errors
@@ -66,6 +67,10 @@ $ yo trails:trailpack trailpack-proxy-generics
 # Configuration
 To configure Proxy Cart is simple, there are only 3 files to create/modify:
 
+- config/main.js
+- config/web.js
+- config/proxyCart.js
+
 ## config/main.js
 > config/main.js
 
@@ -107,6 +112,8 @@ module.exports = {
   }
 }
 ```
+
+This adds the correct middleware to express.
 
 ## config/proxyCart.js
 > config/proxyCart.js
@@ -279,6 +286,8 @@ Vendors are companies that distribute a product. In the case of drop shipping, t
 Proxy Cart publishes many subscribable events using Proxy Engine's pub/sub.
 
 # Published Events
+Proxy Cart uses Proxy Engine's event publisher to publish events.
+
 ## Customer Events
 Events published and saved during customer actions.
 
@@ -359,9 +368,10 @@ Proxy Cart creates many models and extends models from Proxy Engine and Proxy Pe
 ## ItemAddress
 ## ItemCollection
 Join table to handle collection children
-## ItemCoupon
+
 ## ItemDiscount
 Join table to handle discount children
+
 ## ItemImage
 ## ItemRefund
 ## ItemShippingZone
