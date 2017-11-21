@@ -333,9 +333,6 @@
                     <a href="#discounts" class="toc-h2 toc-link" data-title="Discounts">Discounts</a>
                   </li>
                   <li>
-                    <a href="#coupon" class="toc-h2 toc-link" data-title="Coupon">Coupon</a>
-                  </li>
-                  <li>
                     <a href="#subscriptions" class="toc-h2 toc-link" data-title="Subscriptions">Subscriptions</a>
                   </li>
                   <li>
@@ -351,6 +348,91 @@
                     <a href="#events" class="toc-h2 toc-link" data-title="Events">Events</a>
                   </li>
               </ul>
+          </li>
+          <li>
+            <a href="#published-events" class="toc-h1 toc-link" data-title="Published Events">Published Events</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#customer-events" class="toc-h2 toc-link" data-title="Customer Events">Customer Events</a>
+                  </li>
+                  <li>
+                    <a href="#order-events" class="toc-h2 toc-link" data-title="Order Events">Order Events</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#api-endpoints" class="toc-h1 toc-link" data-title="API: Endpoints">API: Endpoints</a>
+          </li>
+          <li>
+            <a href="#api-models" class="toc-h1 toc-link" data-title="API: Models">API: Models</a>
+          </li>
+          <li>
+            <a href="#api-controllers" class="toc-h1 toc-link" data-title="API: Controllers">API: Controllers</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#customercontroller" class="toc-h2 toc-link" data-title="CustomerController">CustomerController</a>
+                  </li>
+                  <li>
+                    <a href="#cartcontroller" class="toc-h2 toc-link" data-title="CartController">CartController</a>
+                  </li>
+                  <li>
+                    <a href="#collectioncontroller" class="toc-h2 toc-link" data-title="CollectionController">CollectionController</a>
+                  </li>
+                  <li>
+                    <a href="#fulfillmentcontroller" class="toc-h2 toc-link" data-title="FulfillmentController">FulfillmentController</a>
+                  </li>
+                  <li>
+                    <a href="#productcontroller" class="toc-h2 toc-link" data-title="ProductController">ProductController</a>
+                  </li>
+                  <li>
+                    <a href="#ordercontroller" class="toc-h2 toc-link" data-title="OrderController">OrderController</a>
+                  </li>
+                  <li>
+                    <a href="#proxycartcontroller" class="toc-h2 toc-link" data-title="ProxyCartController">ProxyCartController</a>
+                  </li>
+                  <li>
+                    <a href="#reviewcontroller" class="toc-h2 toc-link" data-title="ReviewController">ReviewController</a>
+                  </li>
+                  <li>
+                    <a href="#shopcontroller" class="toc-h2 toc-link" data-title="ShopController">ShopController</a>
+                  </li>
+                  <li>
+                    <a href="#subscriptioncontroller" class="toc-h2 toc-link" data-title="SubscriptionController">SubscriptionController</a>
+                  </li>
+                  <li>
+                    <a href="#tagcontroller" class="toc-h2 toc-link" data-title="TagController">TagController</a>
+                  </li>
+                  <li>
+                    <a href="#transactioncontroller" class="toc-h2 toc-link" data-title="TransactionController">TransactionController</a>
+                  </li>
+                  <li>
+                    <a href="#usercontroller" class="toc-h2 toc-link" data-title="UserController">UserController</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#api-services" class="toc-h1 toc-link" data-title="API: Services">API: Services</a>
+          </li>
+          <li>
+            <a href="#api-crons" class="toc-h1 toc-link" data-title="API: Crons">API: Crons</a>
+          </li>
+          <li>
+            <a href="#api-emails" class="toc-h1 toc-link" data-title="API: Emails">API: Emails</a>
+          </li>
+          <li>
+            <a href="#api-templates" class="toc-h1 toc-link" data-title="API: Templates">API: Templates</a>
+          </li>
+          <li>
+            <a href="#api-sitemaps" class="toc-h1 toc-link" data-title="API: Sitemaps">API: Sitemaps</a>
+          </li>
+          <li>
+            <a href="#api-generics" class="toc-h1 toc-link" data-title="API: Generics">API: Generics</a>
+          </li>
+          <li>
+            <a href="#api-analytics" class="toc-h1 toc-link" data-title="API: Analytics">API: Analytics</a>
+          </li>
+          <li>
+            <a href="#api-tasks" class="toc-h1 toc-link" data-title="API: Tasks">API: Tasks</a>
           </li>
           <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
@@ -468,32 +550,30 @@ $ yo trails:trailpack trailpack-proxy-generics
 <p>Like all Trails&#39; trailpacks, it must be included in the <code>config/main.js</code> file.</p>
 <h2 id='config-web-js'>config/web.js</h2>
 <blockquote>
-<p>config/web.js
-```javascript
-module.exports = {
-  /**
+<p>config/web.js</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="cm">/**
    * Middlewares to load (in order)
    * Add the Proxy Cart middleware after the passport middleware
-   */
-  middlewares: {</p>
-</blockquote>
+   */</span>
+  <span class="na">middlewares</span><span class="p">:</span> <span class="p">{</span>
 
-<p>//middlewares loading order
-    order: [
-      // ... other middleware
-      &#39;session&#39;,
-      &#39;passportInit&#39;, // &lt;-- Handles Passport
-      &#39;passportSession&#39;, // &lt;-- Handles Passport Session
-      &#39;proxyCartInit&#39;, // &lt;-- Handles Cart Middleware start
-      &#39;proxyCartSession&#39;, // &lt;-- Handles Session
-      &#39;proxyCartSessionCart&#39;, // &lt;-- Handles Cart Session
-      &#39;proxyCartSessionCustomer&#39;, // &lt;-- Handles Customer Session
-      // ... trailing middleware
-    ]
-  }
-}
-```</p>
-<h2 id='config-proxycart-js'>config/proxyCart.js</h2>
+    <span class="c1">//middlewares loading order</span>
+    <span class="na">order</span><span class="p">:</span> <span class="p">[</span>
+      <span class="c1">// ... other middleware</span>
+      <span class="s1">'session'</span><span class="p">,</span>
+      <span class="s1">'passportInit'</span><span class="p">,</span> <span class="c1">// &lt;-- Handles Passport</span>
+      <span class="s1">'passportSession'</span><span class="p">,</span> <span class="c1">// &lt;-- Handles Passport Session</span>
+      <span class="s1">'proxyCartInit'</span><span class="p">,</span> <span class="c1">// &lt;-- Handles Cart Middleware start</span>
+      <span class="s1">'proxyCartSession'</span><span class="p">,</span> <span class="c1">// &lt;-- Handles Session</span>
+      <span class="s1">'proxyCartSessionCart'</span><span class="p">,</span> <span class="c1">// &lt;-- Handles Cart Session</span>
+      <span class="s1">'proxyCartSessionCustomer'</span><span class="p">,</span> <span class="c1">// &lt;-- Handles Customer Session</span>
+      <span class="c1">// ... trailing middleware</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre><h2 id='config-proxycart-js'>config/proxyCart.js</h2>
 <blockquote>
 <p>config/proxyCart.js</p>
 </blockquote>
@@ -629,8 +709,6 @@ module.exports = {
 <p>A Gift Card is an alternate payment method that acts as a customer source.</p>
 <h2 id='discounts'>Discounts</h2>
 <p>A Discount is a value or percent off of a product, shipping cost, or total order applied by meeting criteria.</p>
-<h2 id='coupon'>Coupon</h2>
-<p>A redeemable discount that has a code.</p>
 <h2 id='subscriptions'>Subscriptions</h2>
 <p>A Subscription is the reoccurring of an order based on time period.</p>
 <h2 id='shipping-zones'>Shipping Zones</h2>
@@ -641,7 +719,894 @@ module.exports = {
 <p>Vendors are companies that distribute a product. In the case of drop shipping, the taxes and shipping are calculated from the vendor address to the customer.</p>
 <h2 id='events'>Events</h2>
 <p>Proxy Cart publishes many subscribable events using Proxy Engine&#39;s pub/sub.</p>
-<h1 id='errors'>Errors</h1>
+<h1 id='published-events'>Published Events</h1><h2 id='customer-events'>Customer Events</h2>
+<p>Events published and saved during customer actions.</p>
+<h3 id='customer-checkout'>customer.checkout</h3><h3 id='customer-updated'>customer.updated</h3><h3 id='customer-account-created'>customer.account.created</h3><h3 id='customer-account-updated'>customer.account.updated</h3><h3 id='customer-account_balance-updated'>customer.account_balance.updated</h3><h3 id='customer-source-created'>customer.source.created</h3><h3 id='customer-source-updated'>customer.source.updated</h3><h3 id='customer-source-removed'>customer.source.removed</h3><h3 id='customer-subscription-subscribed'>customer.subscription.subscribed</h3><h3 id='customer-subscription-updated'>customer.subscription.updated</h3><h3 id='customer-subscription-cancelled'>customer.subscription.cancelled</h3><h3 id='customer-subscription-activated'>customer.subscription.activated</h3><h3 id='customer-subscription-deactivated'>customer.subscription.deactivated</h3><h3 id='customer-subscription-items_added'>customer.subscription.items_added</h3><h3 id='customer-subscription-items_removed'>customer.subscription.items_removed</h3><h3 id='customer-subscription-renewed'>customer.subscription.renewed</h3><h2 id='order-events'>Order Events</h2>
+<p>Order events published and saved during order operations.</p>
+<h3 id='order-created-pending-success-failure-error'>order.created.*{pending|success|failure|error}</h3><h3 id='order-transaction-sale-pending-success-failure-error'>order.transaction.sale.*{pending|success|failure|error}</h3><h3 id='order-transaction-authorize-pending-success-failure-error'>order.transaction.authorize.*{pending|success|failure|error}</h3><h3 id='order-transaction-capture-pending-success-failure-error'>order.transaction.capture.*{pending|success|failure|error}</h3><h3 id='order-transaction-void-pending-success-failure-error'>order.transaction.void.*{pending|success|failure|error}</h3><h3 id='order-transaction-refund-pending-success-failure-error'>order.transaction.refund.*{pending|success|failure|error}</h3><h3 id='order-fulfillment-create-pending-success-failure-error'>order.fulfillment.create.*{pending|success|failure|error}</h3><h1 id='api-endpoints'>API: Endpoints</h1><h1 id='api-models'>API: Models</h1><h1 id='api-controllers'>API: Controllers</h1><h2 id='customercontroller'>CustomerController</h2>
+<p>Handles Customer operations</p>
+<h3 id='customercontroller-create'>CustomerController.create</h3>
+<p>Creates a Customer</p>
+
+<blockquote>
+<p>POST <api>/customer
+```javascript</p>
+</blockquote>
+<pre class="highlight plaintext"><code>
+### CustomerController.update
+Updates a Customer
+
+&gt; POST &lt;api&gt;/customer/:id
+
+```javascript
+</code></pre>
+<blockquote>
+<p>Returns updated customer</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{}
+</code></pre><h3 id='customercontroller-findone'>CustomerController.findOne</h3>
+<p>Find a Customer by id</p>
+
+<blockquote>
+<p>GET <api>/customer/:id</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code></code></pre>
+<blockquote>
+<p>Returns customer</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre><h3 id='customercontroller-session'>CustomerController.session</h3>
+<p>Get the current customer in session</p>
+
+<blockquote>
+<p>GET <api>/customer/session</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+</code></pre>
+<blockquote>
+<p>Returns customer</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{}
+</code></pre><h3 id='customercontroller-search'>CustomerController.search</h3>
+<blockquote>
+<p>GET <api>/customer/search</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+</code></pre>
+<blockquote>
+<p>Returns customers</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">[]</span>
+</code></pre><h3 id='customercontroller-uploadcsv'>CustomerController.uploadCSV</h3>
+<p>Upload a Customer CSV</p>
+
+<blockquote>
+<p>POST <api>/customer/uploadCSV</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="c1">//</span>
+</code></pre>
+<blockquote>
+<p>Returns details</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre><h3 id='customercontroller-processupload'>CustomerController.processUpload</h3>
+<p>Process Uploaded Customer CSV</p>
+
+<blockquote>
+<p>POST <api>/customer/processUpload/:id</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="c1">//</span>
+</code></pre>
+<blockquote>
+<p>Returns details</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre><h3 id='customercontroller-exportcustomers'>CustomerController.exportCustomers</h3>
+<p>Exports customers as a CSV</p>
+<h2 id='cartcontroller'>CartController</h2>
+<p>Handles Cart operations</p>
+<h3 id='cartcontroller-create'>CartController.create</h3>
+<p>Creates a new cart and can add items at the start. Some interesting features:</p>
+
+<ul>
+<li>Specify a <code>product_id</code>, <code>variant_id</code>, or <code>product_variant_id</code> which is an alias of &#39;variant_id&#39; </li>
+<li>Specify a quantity </li>
+<li>Specify properties, useful for custom specifics to an order</li>
+<li>Checks if the product inventory is available according to inventory policy</li>
+<li>Checks for geographic restrictions</li>
+<li>Checks for Product and Customer Discounts</li>
+<li>Checks and validates Coupons</li>
+</ul>
+
+<blockquote>
+<p>POST <api>/cart
+<code>javascript
+{
+  line_items: [
+    {
+      variant_id: 1,
+      properties: [
+        { custom_engraving: &#39;Hello World&#39; }
+      ]
+    },
+    {
+      product_variant_id: 1
+    },
+    {
+      product_id: 1,
+      quantity: 2
+    }
+  ]
+}
+</code></p>
+
+<p>Returns a Cart Object</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+</code></pre><h3 id='cartcontroller-checkout'>CartController.checkout</h3>
+<p>From cart to checkout is easy and there are some special features to note:
+- You can supply multiple payment methods
+- You can override the the shipping and billing address
+- You can process payments immediately
+- You can send to fulfillment immediately</p>
+
+<p><code>payment_kind</code>: the type of payment to be made, &#39;immediate&#39;, &#39;manual&#39;</p>
+
+<p><code>transaction_kind</code>: The type of transaction to create, &#39;authorize&#39;, &#39;capture&#39;, &#39;sale&#39;, or &#39;manual&#39;</p>
+
+<p><code>payment_details</code>: an array of payment information, requires a &#39;gateway&#39; attribute and normally a &#39;token&#39; or a &#39;source&#39;</p>
+
+<p><code>fulfillment_kind</code>: the type of fulfillment to perform, &#39;immediate&#39;, &#39;manual&#39;, null or blank</p>
+
+<p><code>billing_address</code>: an address object or you can leave null if cart has a customer with address </p>
+
+<p><code>shipping_address</code>: an address object or you can leave null if cart has a customer with address</p>
+
+<p><code>shop_id</code>: an id, provide a shop ID if you want to require calculations be based on a shop location</p>
+
+<blockquote>
+<p>POST <api>/cart/:id/checkout || <api>/cart/checkout (If cart in session)
+```javascript</p>
+</blockquote>
+
+<p>{
+  payment_kind: &#39;immediate&#39;,
+  transaction_kind: &#39;sale&#39;,
+  payment_details: [
+    {
+      gateway: &#39;payment_processor&#39;,
+      token: &#39;123&#39;
+    }
+  ],
+  fulfillment_kind: &#39;immediate&#39;
+}
+```</p>
+
+<blockquote>
+<p>Returns the placed Order and a new Cart object, and if Customer was provided/created a Customer Object</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="nl">order</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="nx">cart</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="nx">customer</span><span class="p">:</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre><h3 id='cartcontroller-additems'>CartController.addItems</h3>
+<p>Add Items to an open cart. Some interesting things to note:</p>
+
+<ul>
+<li>You can add an existing item to a cart and it will increase the quantity</li>
+<li>Checks if the product inventory is available according to inventory policy</li>
+<li>Checks for geographic restrictions</li>
+<li>Checks for Product, Collections, and Customer Discounts</li>
+<li>Checks for Account Balance</li>
+<li>Checks and validates Coupons</li>
+</ul>
+
+<blockquote>
+<p>POST <api>/cart/:id/addItems || <api>/cart/addItems (if cart in session)</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="nl">line_items</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="na">variant_id</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="na">properties</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span> <span class="na">custom_engraving</span><span class="p">:</span> <span class="s1">'Hello World'</span> <span class="p">}</span>
+      <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="na">product_variant_id</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="na">product_id</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="na">quantity</span><span class="p">:</span> <span class="mi">2</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre>
+<blockquote>
+<p>Returns the cart with new values </p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre><h3 id='cartcontroller-removeitems'>CartController.removeItems</h3>
+<p>Remove Items from an open cart. Some interesting things to note:</p>
+
+<ul>
+<li>If you specify just an id form, it will only reduce the quantity in the cart by 1.</li>
+<li>If you specify a quantity, it will reduce the quantity in the cart by that number</li>
+</ul>
+
+<blockquote>
+<p>POST <api>/cart/:id/removeItems || <api>/cart/removeItems (if cart in session)</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="nl">line_items</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="na">variant_id</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="na">product_variant_id</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="na">product_id</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="na">quantity</span><span class="p">:</span> <span class="mi">2</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre>
+<blockquote>
+<p>Returns updated Cart</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre><h3 id='cartcontroller-clear'>CartController.clear</h3>
+<p>Removes all items from an open cart</p>
+
+<blockquote>
+<p>POST <api>/cart/:id/clear || <api>/cart/clear (if cart in session)</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre>
+<blockquote>
+<p>Returns updated Cart</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre><h2 id='collectioncontroller'>CollectionController</h2>
+<p>Handles Collection operations</p>
+<h3 id='collectioncontroller-create'>CollectionController.create</h3>
+<p>Creates a new Collection. Some interesting things to note:
+- A collection has many products associated to it.  In addition, it can have a discount that applies to the products which is reflected in their calculated price.  This is different then the discount object (which effects an individual product).  For the collection, you can have the discount be ignored for certain product types.  Put those product type strings in the <code>discount_product_exclude</code> array.  But let’s say that the product types you want to discount is shorter then the product types you don’t want to discount, in which case, you would use the <code>discount_product_include</code>. You would never want to use both. If the <code>discount_product_exclude</code>&#39;s length is greater than 0, <code>discount_product_include</code> will be ignored.</p>
+
+<blockquote>
+<p>POST <code>&lt;api&gt;/collection</code></p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="nl">handle</span><span class="p">:</span> <span class="s2">"customer-discount-test"</span><span class="p">,</span>
+  <span class="nx">title</span><span class="p">:</span> <span class="s2">"Customer Discount"</span><span class="p">,</span>
+  <span class="nx">body</span><span class="p">:</span> <span class="s2">"# Customer Discount"</span><span class="p">,</span>
+  <span class="nx">published</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">sort_order</span><span class="p">:</span> <span class="s2">"price-desc"</span><span class="p">,</span>
+  <span class="nx">discount_type</span><span class="p">:</span> <span class="s2">"fixed"</span><span class="p">,</span>
+  <span class="nx">discount_scope</span><span class="p">:</span> <span class="s2">"global"</span><span class="p">,</span>
+  <span class="nx">discount_rate</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+  <span class="nx">primary_purpose</span><span class="p">:</span> <span class="s2">"discount"</span><span class="p">,</span>
+  <span class="nx">discount_product_exclude</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">"subscription"</span>
+  <span class="p">],</span>
+  <span class="nx">collections</span><span class="p">:</span> <span class="p">[</span>
+    <span class="c1">// Add an existing sub collection</span>
+    <span class="s2">"existing-collection-handle"</span><span class="p">,</span>
+    <span class="c1">// Create a new collection</span>
+    <span class="p">{</span>
+      <span class="na">handle</span><span class="p">:</span> <span class="s1">'new-collection-handle'</span><span class="p">,</span>
+      <span class="na">title</span><span class="p">:</span> <span class="s1">'New Collection'</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre>
+<blockquote>
+<p>Returns created collection</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre><h3 id='collectioncontroller-update'>CollectionController.update</h3>
+<p>Updates a Collection</p>
+
+<blockquote>
+<p>POST <code>&lt;api&gt;/collection/:id</code></p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre>
+<blockquote>
+<p>Returns updated collection</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre><h3 id='collectioncontroller-add'>CollectionController.add</h3>
+<p>Adds a Collection to a collection</p>
+
+<blockquote>
+<p>POST <api>/collection/:id/add/:collection</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre>
+<blockquote>
+<p>Returns updated collection</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre><h3 id='collectioncontroller-remove'>CollectionController.remove</h3>
+<p>Remove a Collection from a collection</p>
+
+<blockquote>
+<p>POST <api>/collection/:id/remove/:collection</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre>
+<blockquote>
+<p>Returns updated collection</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre><h3 id='collectioncontroller-addproduct'>CollectionController.addProduct</h3>
+<p>Add a product to a Collection</p>
+
+<blockquote>
+<p>POST <api>/collection/:id/addProduct/:product</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre>
+<blockquote>
+<p>Returns updated collection</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre><h3 id='collectioncontroller-removeproduct'>CollectionController.removeProduct</h3>
+<p>Removes a product from a Collection</p>
+
+<blockquote>
+<p>POST <api>/collection/:id/removeProduct/:product</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre>
+<blockquote>
+<p>Returns updated collection</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre><h3 id='collectioncontroller-addcustomer'>CollectionController.addCustomer</h3>
+<p>Add a customer to a Collection</p>
+
+<blockquote>
+<p>POST <api>/collection/:id/addCustomer/:customer</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre>
+<blockquote>
+<p>Returns updated collection</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre><h3 id='collectioncontroller-removecustomer'>CollectionController.removeCustomer</h3>
+<p>Removes a customer from a Collection</p>
+
+<blockquote>
+<p>POST <api>/collection/:id/removeCustomer/:customer</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre>
+<blockquote>
+<p>Returns updated collection</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre><h3 id='customercontroller-uploadcsv-2'>CustomerController.uploadCSV</h3>
+<p>Uploads a Customer CSV using a template and makes it ready to process</p>
+
+<blockquote>
+<p>POST <api>/customer/uploadCSV
+name: csv</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+</code></pre>
+<blockquote>
+<p>Returns statistics of the upload</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre><h3 id='customercontroller-processupload-2'>CustomerController.processUpload</h3>
+<p>Processes Uploaded CSV</p>
+
+<blockquote>
+<p>POST <api>/customer/processUpload/:uploadID
+<code>javascript
+{}
+</code></p>
+
+<p>Returns statistics of the processed upload</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre><h2 id='fulfillmentcontroller'>FulfillmentController</h2>
+<p>Handles Fulfillment operations</p>
+<h2 id='productcontroller'>ProductController</h2>
+<p>Handles Product operations</p>
+<h3 id='productcontroller-findone'>ProductController.findOne</h3>
+<p>Find a Product by <code>id</code></p>
+
+<blockquote>
+<p>GET <api>/product/:id</p>
+
+<p>Returns the product</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre><h3 id='productcontroller-findall'>ProductController.findAll</h3>
+<p>Find a Products by query</p>
+
+<blockquote>
+<p>GET <api>/products</p>
+
+<p>Returns paginated products with pagination <code>x-headers</code></p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">[]</span>
+</code></pre><h3 id='productcontroller-findbytag'>ProductController.findByTag</h3>
+<p>Find a Products by tag name with query</p>
+
+<blockquote>
+<p>GET <api>/products/tag/:tag</p>
+
+<p>Returns paginated products with pagination <code>x-headers</code></p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">[]</span>
+</code></pre><h3 id='productcontroller-findbycollection'>ProductController.findByCollection</h3>
+<p>Find a Products by collection handle with query</p>
+
+<blockquote>
+<p><api>/products/collection/:handle</p>
+
+<p>Returns paginated products with pagination <code>x-headers</code></p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">[]</span>
+</code></pre><h3 id='productcontroller-addproduct'>ProductController.addProduct</h3>
+<p>Adds a new product. Some interesting things to note:
+- If you do not supply a currency, it will use the your configs default currency (USD)
+- Prices are all in whole numbers a their base level eg. $1.00 = 100
+- If a collection is not found in the list, it will be created.
+- If a tag is not found in the list, it will be created.
+- If you do not provide any variants, a default variant will be created if there is provided SKU.</p>
+
+<blockquote>
+<p>POST <api>/product || POST <api>/product/add</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="nl">handle</span><span class="p">:</span> <span class="s1">'snowboard'</span><span class="p">,</span>
+  <span class="nx">title</span><span class="p">:</span> <span class="s1">'Burton Custom Freestyle 151'</span><span class="p">,</span>
+  <span class="nx">body</span><span class="p">:</span> <span class="s1">'&lt;strong&gt;Good snowboard!&lt;/strong&gt;'</span><span class="p">,</span>
+  <span class="nx">vendors</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s1">'Burton'</span>
+  <span class="p">],</span>
+  <span class="nx">type</span><span class="p">:</span> <span class="s1">'Snowboard'</span><span class="p">,</span>
+  <span class="nx">price</span><span class="p">:</span> <span class="s1">'10000'</span><span class="p">,</span>
+  <span class="nx">published</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">tags</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s1">'snow'</span><span class="p">,</span>
+    <span class="s1">'equipment'</span><span class="p">,</span>
+    <span class="s1">'outdoor'</span>
+  <span class="p">],</span>
+  <span class="nx">collections</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s1">'fire sale'</span>
+  <span class="p">],</span>
+  <span class="nx">metadata</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nl">test</span><span class="p">:</span> <span class="s1">'value'</span>
+  <span class="p">},</span>
+  <span class="nx">sku</span><span class="p">:</span> <span class="s1">'board-m-123'</span><span class="p">,</span>
+  <span class="nx">weight</span><span class="p">:</span> <span class="s1">'20'</span><span class="p">,</span>
+  <span class="nx">weight_unit</span><span class="p">:</span> <span class="s1">'lb'</span><span class="p">,</span>
+  <span class="nx">images</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="na">src</span><span class="p">:</span> <span class="s1">'https://placeholdit.imgix.net/~text?txtsize=33&amp;txt=350%C3%97150&amp;w=350&amp;h=150'</span><span class="p">,</span>
+      <span class="na">alt</span><span class="p">:</span> <span class="s1">'Hello World'</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="nx">variants</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="na">title</span><span class="p">:</span> <span class="s1">'Women\'s Burton Custom Freestyle 151'</span><span class="p">,</span>
+      <span class="na">price</span><span class="p">:</span> <span class="s1">'10001'</span><span class="p">,</span>
+      <span class="na">sku</span><span class="p">:</span> <span class="s1">'board-w-123'</span><span class="p">,</span>
+      <span class="na">images</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="na">src</span><span class="p">:</span> <span class="s1">'https://placeholdit.imgix.net/~text?txtsize=33&amp;txt=350%C3%97150&amp;w=350&amp;h=150'</span><span class="p">,</span>
+          <span class="na">alt</span><span class="p">:</span> <span class="s1">'Hello World 2'</span>
+        <span class="p">}</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre>
+<blockquote>
+<p>Returns Created Product</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre><h3 id='productcontroller-addproducts'>ProductController.addProducts</h3>
+<p>Adds new products</p>
+
+<blockquote>
+<p>POST <api>/product/addProducts || <api>/products</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">[]</span>
+</code></pre>
+<blockquote>
+<p>Returns Created Products</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">[]</span>
+</code></pre><h3 id='productcontroller-updateproduct'>ProductController.updateProduct</h3>
+<p>Updates a product. updateProduct can update a product, add new variants and update existing ones, and add/update images all in one step.
+Some interesting things to note:
+- Updating the metadata will override the original metadata completely
+- Supplying a list of collection&#39;s will override the original collections list.
+- You can supply a completely new collection in the collection list and one will be created.
+- Supplying a list of tags will override original tags list.
+- You can supply a completely new tag in the tag list and one will be created.
+- If you supply a title and there is no original SEO title, an SEO title will be created.
+- If you supply a body, the html attribute will be updated.
+- You can not modify the html attribute, instead, use the body to write new markdown/html or a mixture of both.
+- Supplying a list of Images will only add new images to the product or modify existing ones by supplying an image <code>id</code>. IT DOES NOT REMOVE ANY IMAGES
+- Supplying a list of variants will only add new variants to the product or modify existing ones by supplying a variant <code>id</code>. IT DOES NOT REMOVE ANY VARIANTS</p>
+
+<blockquote>
+<p>POST <api>/product/:id/update</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+<span class="p">{</span>
+  <span class="nl">id</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">id</span><span class="o">&gt;</span><span class="p">,</span>
+  <span class="c1">// Updates Title</span>
+  <span class="nx">title</span><span class="p">:</span> <span class="s1">'Burton Custom Freestyle 151 Gen 2'</span><span class="p">,</span>
+  <span class="c1">// Updates Metdata</span>
+  <span class="nx">metadata</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nl">test</span><span class="p">:</span> <span class="s1">'new value'</span>
+  <span class="p">},</span>
+  <span class="c1">// Alters collections</span>
+  <span class="nx">collections</span><span class="p">:</span> <span class="p">[</span>
+    <span class="c1">// Existing Collection</span>
+    <span class="s1">'free-shipping'</span><span class="p">,</span>
+    <span class="c1">// A completely new collection</span>
+    <span class="p">{</span>
+      <span class="na">handle</span><span class="p">:</span> <span class="s1">'merorial-day-sale'</span><span class="p">,</span>
+      <span class="na">title</span><span class="p">:</span> <span class="s1">'Memorial Day Sale'</span><span class="p">,</span>
+      <span class="na">discount_type</span><span class="p">:</span> <span class="s2">"fixed"</span><span class="p">,</span>
+      <span class="na">discount_scope</span><span class="p">:</span> <span class="s2">"global"</span><span class="p">,</span>
+      <span class="na">discount_rate</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+      <span class="na">primary_purpose</span><span class="p">:</span> <span class="s2">"discount"</span><span class="p">,</span>
+      <span class="na">published</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="nx">tags</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s1">'new tag'</span>
+  <span class="p">],</span>
+  <span class="nx">images</span><span class="p">:</span> <span class="p">[</span>
+    <span class="c1">// Updates existing Image alt</span>
+    <span class="p">{</span>
+      <span class="na">id</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">image_id</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="na">alt</span><span class="p">:</span> <span class="s1">'Hello World 2 Updated'</span>
+    <span class="p">},</span>
+    <span class="c1">// Creates new Image</span>
+    <span class="p">{</span>
+      <span class="na">src</span><span class="p">:</span> <span class="s1">'https://placeholdit.imgix.net/~text?txtsize=33&amp;txt=350%C3%97150&amp;w=350&amp;h=150'</span><span class="p">,</span>
+      <span class="na">alt</span><span class="p">:</span> <span class="s1">'Hello World 3'</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="nx">variants</span><span class="p">:</span> <span class="p">[</span>
+    <span class="c1">// Updates Variant</span>
+    <span class="p">{</span>
+      <span class="na">id</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">variant_id</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="c1">// Updates the Title</span>
+      <span class="na">title</span><span class="p">:</span> <span class="s1">'Women\'s Burton Custom Freestyle 151 Updated'</span><span class="p">,</span>
+      <span class="c1">// Updates the Variants position</span>
+      <span class="na">position</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="c1">// Updates existing Image alt</span>
+      <span class="na">images</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="na">id</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">image_id</span><span class="o">&gt;</span><span class="p">,</span>
+          <span class="na">alt</span><span class="p">:</span> <span class="s1">'Image Updated'</span>
+        <span class="p">},</span>
+        <span class="c1">// Add a new Image</span>
+        <span class="p">{</span>
+          <span class="na">src</span><span class="p">:</span> <span class="s1">'https://placeholdit.imgix.net/~text?txtsize=33&amp;txt=350%C3%97150&amp;w=350&amp;h=150'</span><span class="p">,</span>
+          <span class="na">alt</span><span class="p">:</span> <span class="s1">'Hello World 5'</span>
+        <span class="p">}</span>
+      <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="c1">// Creates new Variant</span>
+    <span class="p">{</span>
+      <span class="na">title</span><span class="p">:</span> <span class="s1">'Youth Burton Custom Freestyle 151'</span><span class="p">,</span>
+      <span class="na">sku</span><span class="p">:</span> <span class="s1">'board-y-123'</span><span class="p">,</span>
+      <span class="na">images</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="na">src</span><span class="p">:</span> <span class="s1">'https://placeholdit.imgix.net/~text?txtsize=33&amp;txt=350%C3%97150&amp;w=350&amp;h=150'</span><span class="p">,</span>
+          <span class="na">alt</span><span class="p">:</span> <span class="s1">'Hello World 4'</span>
+        <span class="p">}</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre>
+<blockquote>
+<p>Returns the updated Product</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre><h3 id='productcontroller-updateproducts'>ProductController.updateProducts</h3>
+<p>Updates multiple products at once.</p>
+
+<blockquote>
+<p>PUT <api>/products || POST <api>/product/updateProducts</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">[]</span>
+</code></pre>
+<blockquote>
+<p>Returns the updated Products</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">[]</span>
+</code></pre><h3 id='productcontroller-removeproduct'>ProductController.removeProduct</h3>
+<p>Removes a product (does not delete unless configured too)</p>
+
+<blockquote>
+<p>POST <api>/product/:id/remove || DELETE <api>/product/:id</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre>
+<blockquote>
+<p>Returns the removed product</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre><h3 id='productcontroller-removeproducts'>ProductController.removeProducts</h3>
+<p>Removes multiple products (does not delete unless configured too)</p>
+
+<blockquote>
+<p>POST <api>/product/removeProducts</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">[]</span>
+</code></pre>
+<blockquote>
+<p>Returns the removed products</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">[]</span>
+</code></pre><h3 id='productcontroller-createvariant'>ProductController.createVariant</h3>
+<p>Creates a variant. Some interesting things to note:
+- Any attributes not defined, will be inherited from the parent product
+- Any new options provided will be added to the product options array eg. Price, weight, currency, etc.</p>
+
+<blockquote>
+<p>POST <api>/product/:id/variant</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="nl">sku</span><span class="p">:</span> <span class="s1">'new-sku'</span><span class="p">,</span>
+  <span class="nx">title</span><span class="p">:</span> <span class="s1">'Awesome SKU'</span><span class="p">,</span>
+  <span class="nx">option</span><span class="p">:</span> <span class="p">{</span><span class="s1">'Option 1'</span><span class="p">:</span> <span class="s1">'This is Option 1'</span><span class="p">,</span> <span class="s1">'Option 2'</span><span class="p">:</span> <span class="s1">'This is Option 2'</span> <span class="p">},</span>
+  <span class="nx">price</span><span class="p">:</span> <span class="mi">10000</span><span class="p">,</span>
+  <span class="nx">currecny</span><span class="p">:</span> <span class="s1">'USD'</span>
+<span class="p">}</span>
+</code></pre>
+<blockquote>
+<p>Returns created Variant</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre><h3 id='productcontroller-updatevariant'>ProductController.updateVariant</h3>
+<p>Updates a variant. Some interesting things to note:
+- Any new options provided will be added to the product options array eg. Price, weight, currency, etc.
+- You can not update the SKU on an already created variant!</p>
+
+<blockquote>
+<p>POST <api>/product/:id/variant/:variant</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+ <span class="nl">title</span><span class="p">:</span> <span class="s1">'Awesome SKU'</span><span class="p">,</span>
+ <span class="nx">option</span><span class="p">:</span> <span class="p">{</span><span class="s1">'Option 3'</span><span class="p">:</span> <span class="s1">'This is Option 3'</span><span class="p">,</span> <span class="s1">'Option 4'</span><span class="p">:</span> <span class="s1">'This is Option 4'</span> <span class="p">}</span> 
+<span class="p">}</span>
+</code></pre>
+<blockquote>
+<p>Returns updated Variant</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre><h3 id='productcontroller-removevariant'>ProductController.removeVariant</h3>
+<p>Removes a product variant (does not delete unless configured too)</p>
+
+<blockquote>
+<p>POST <api>/product/:id/variant/:variant/remove || DELETE <api>/product/:id/variant/:variant</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre>
+<blockquote>
+<p>Returns the removed variant</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre><h3 id='productcontroller-removevariants'>ProductController.removeVariants</h3>
+<p>Removes multiple product variants (does not delete unless configured too)
+// TODO</p>
+<h3 id='productcontroller-removeimage'>ProductController.removeImage</h3>
+<p>Removes a product image</p>
+
+<blockquote>
+<p>POST <api>/product/:id/image/:image/remove || DELETE <api>/product/:id/image/:image</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre>
+<blockquote>
+<p>Returns the deleted images</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">[]</span>
+</code></pre><h3 id='productcontroller-addtag'>ProductController.addTag</h3>
+<p>Adds a tag to a product</p>
+
+<blockquote>
+<p>POST <api>/product/:id/addTag/:tag</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre>
+<blockquote>
+<p>Returns Updated Product</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre><h3 id='productcontroller-removetag'>ProductController.removeTag</h3>
+<p>Removes a tag from a product</p>
+
+<blockquote>
+<p>POST <api>/product/:id/removeTag/:tag || DELETE <api>/product/:id/tag/:tag</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre>
+<blockquote>
+<p>Returns Updated Product</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre><h3 id='productcontroller-addcollection'>ProductController.addCollection</h3>
+<p>Adds a product to a collection</p>
+
+<blockquote>
+<p>POST <api>/product/:id/addCollection/:collection</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre>
+<blockquote>
+<p>Returns Updated Product</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre><h3 id='productcontroller-removecollection'>ProductController.removeCollection</h3>
+<p>Removes a product from a collection</p>
+
+<blockquote>
+<p>POST <api>/product/:id/addCollection/:collection</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre>
+<blockquote>
+<p>Returns Updated Product</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre><h3 id='productcontroller-addvendor'>ProductController.addVendor</h3>
+<p>Adds a Vendor to a product</p>
+
+<blockquote>
+<p>POST <api>/product/:id/addVendor/:vendor</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre>
+<blockquote>
+<p>Returns Updated Product</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre><h3 id='productcontroller-removevendor'>ProductController.removeVendor</h3>
+<p>Removes a Vendor from a product</p>
+
+<blockquote>
+<p>POST <api>/product/:id/removeVendor/:vendor</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre>
+<blockquote>
+<p>Returns Updated Product</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre><h3 id='productcontroller-uploadcsv'>ProductController.uploadCSV</h3>
+<p>Uploads a Product CSV using a template and makes it ready to process</p>
+
+<blockquote>
+<p>//POST <api>/product/uploadCSV
+ name: csv</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre>
+<blockquote>
+<p>Returns statistics of the upload</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre><h3 id='productcontroller-processupload'>ProductController.processUpload</h3>
+<p>Processes Uploaded CSV</p>
+
+<blockquote>
+<p>POST <api>product/processUpload/:uploadID</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre>
+<blockquote>
+<p>Returns statistics of the processed upload</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre><h3 id='productcontroller-uploadmetacsv'>ProductController.uploadMetaCSV</h3>
+<p>Uploads a Metadata CSV using a template and makes it ready to process</p>
+
+<blockquote>
+<p>POST <api>product/uploadMetaCSV
+ name csv</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre>
+<blockquote>
+<p>Returns statistics of the upload</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre><h3 id='productcontroller-processmetaupload'>ProductController.processMetaUpload</h3>
+<p>Processes Uploaded Metadata CSV</p>
+
+<blockquote>
+<p>POST <api>product/processMetaUpload/:uploadMetaID
+<code>javascript
+{}
+</code></p>
+
+<p>Returns statistics of the processed upload</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre><h3 id='productcontroller-exportproducts'>ProductController.exportProducts</h3>
+<p>Exports products as a CSV (TODO)</p>
+
+<blockquote>
+<p>POST <api>product/exportProducts</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre>
+<blockquote>
+<p>Returns a CSV</p>
+</blockquote>
+<h2 id='ordercontroller'>OrderController</h2>
+<p>Handles Order operations</p>
+<h3 id='ordercontroller-exportorders'>OrderController.exportOrders</h3>
+<p>Exports orders as a CSV (TODO)</p>
+
+<blockquote>
+<p>POST <api>/order/exportOrders</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre>
+<blockquote>
+<p>Returns a CSV</p>
+</blockquote>
+<h2 id='proxycartcontroller'>ProxyCartController</h2>
+<p>Handles ProxyCart operations</p>
+<h2 id='reviewcontroller'>ReviewController</h2>
+<p>Handles Review operations</p>
+<h2 id='shopcontroller'>ShopController</h2>
+<p>Handles Shop operations</p>
+<h3 id='shopcontroller-create'>ShopController.create</h3>
+<p>Creates a new Shop</p>
+
+<blockquote>
+<p>POST <api>/shop</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre>
+<blockquote>
+<p>Returns the created Shop</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre><h3 id='shopcontroller-update'>ShopController.update</h3>
+<p>Updates a Shop</p>
+
+<blockquote>
+<p>POST <api>/shop/:id</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre>
+<blockquote>
+<p>Returns the updated Shop</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{}</span>
+</code></pre><h2 id='subscriptioncontroller'>SubscriptionController</h2>
+<p>Handles Subscription operations</p>
+<h2 id='tagcontroller'>TagController</h2>
+<p>Handles Tag operations</p>
+<h2 id='transactioncontroller'>TransactionController</h2>
+<p>Handles Transaction operations</p>
+<h2 id='usercontroller'>UserController</h2>
+<p>Handles User operations</p>
+<h1 id='api-services'>API: Services</h1><h1 id='api-crons'>API: Crons</h1><h1 id='api-emails'>API: Emails</h1><h1 id='api-templates'>API: Templates</h1><h1 id='api-sitemaps'>API: Sitemaps</h1><h1 id='api-generics'>API: Generics</h1><h1 id='api-analytics'>API: Analytics</h1><h1 id='api-tasks'>API: Tasks</h1><h1 id='errors'>Errors</h1>
 <p>The Proxy Engine API uses the following error codes:</p>
 
 <table><thead>
